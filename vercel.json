@@ -1,12 +1,36 @@
 {
   "version": 2,
   "builds": [
-    { "src": "api/**/*.js", "use": "@vercel/node" }
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build",
+        "cleanDistDir": true
+      }
+    },
+    {
+      "src": "api/*.js",
+      "use": "@vercel/node"
+    }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "/api/$1.js" }
-  ],
-    "env": {
-    "REACT_APP_MONGODB_URI": "@quiz-mongodb-uri"
-  }
+    { 
+        "src": "/api/(.*)",
+        "dest": "/api/$1.js" 
+    },
+    {
+      "src": "/static/(.*)",
+      "dest": "/build/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/build/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/build/index.html",
+      "status": 200
+    }
+  ]
 }

@@ -55,7 +55,7 @@ const EndingPage: React.FC<EndingPageProps> = ({ results }) => {
       try {
         const hasSubmitted = sessionStorage.getItem('scoreSubmitted');
         if (!hasSubmitted) {
-          const saveRes = await fetch('http://localhost:3001/api/saveScore', {
+          const saveRes = await fetch('/api/saveScore', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name: userName, score }),
@@ -69,7 +69,7 @@ const EndingPage: React.FC<EndingPageProps> = ({ results }) => {
           sessionStorage.setItem('scoreSubmitted', 'true');
         }
 
-        const leaderRes = await fetch(`http://localhost:3001/api/getLeaderboard?t=${Date.now()}`);
+        const leaderRes = await fetch(`/api/getLeaderboard?t=${Date.now()}`);
 
         const data = await leaderRes.json();
         setLeaderboard(data);

@@ -1,7 +1,7 @@
 import { MongoClient } from 'mongodb';
 
 export default async (req, res) => {
-  const uri = process.env.REACT_APP_MONGODB_URI;
+  const uri = process.env.MONGODB_URI;
   const client = new MongoClient(uri);
   try {
     await client.connect();

@@ -15,7 +15,7 @@ export default async (req, res) => {
 
   const { name, score } = req.body;
 
-  const uri = process.env.REACT_APP_MONGODB_URI;
+  const uri = process.env.MONGODB_URI;
   const client = new MongoClient(uri);
 
   try {
