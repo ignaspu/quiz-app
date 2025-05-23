@@ -16,7 +16,6 @@ A simple, fun quiz app to test your developer knowledge and personality.
 ## Tech Stack
 
 - **Frontend**: React, TypeScript, Tailwind CSS
-- **Backend**: Node.js/Express API
 - **Database**: MongoDB for leaderboard storage
 - **Animations**: Framer Motion
 - **Confetti Effects**: React-confetti
@@ -28,9 +27,8 @@ A simple, fun quiz app to test your developer knowledge and personality.
 3. Choose answer before time runs out
 4. See correct answer after selection
 5. Finish all questions to see final score
-6. Save your score to MongoDB leaderboard
-7. Check where you rank against others
-8. Try again to improve your score!
+6. Check where you rank against others
+7. Try again to improve your score!
 
 ## Installation & Setup
 
@@ -40,5 +38,7 @@ A simple, fun quiz app to test your developer knowledge and personality.
 
 2. **Frontend**:
 ```bash
+Create .env file in root directory with:
+MONGODB_URI="mongodb+srv://username:password@cluster0.3jy3sc1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 npm install
 npm start
